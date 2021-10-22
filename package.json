@@ -14,7 +14,10 @@
     "build": "pnpm clean && tsc"
   },
   "keywords": [],
-  "author": "sunnz",
+  "author": {
+    "name": "sunnz",
+    "url": "https://github.com/sunnz"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^16.7.6",
