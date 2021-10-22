@@ -1,0 +1,26 @@
+{
+  "name": "ranpass",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "bin": {
+    "random": "dist/index.js"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prestart": "npx only-allow pnpm",
+    "start": "nodemon src/index.ts",
+    "clean": "rm -rf ./dist",
+    "build": "pnpm clean && tsc"
+  },
+  "keywords": [],
+  "author": "sunnz",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^16.7.6",
+    "nodemon": "^2.0.13",
+    "prettier": "2.3.2",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.2"
+  }
+}
