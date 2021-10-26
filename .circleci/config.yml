@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: 'cimg/node:current'
+    steps:
+      - checkout
+      - run:
+          name: pnpm
+          command: curl -fsSL https://get.pnpm.io/install.sh | bash -
+      - run:
+          name: install
+          command: /home/circleci/.local/share/pnpm/pnpm install -D
+      - run:
+          name: build
+          command: /home/circleci/.local/share/pnpm/pnpm build
+      - run:
+          name: release
+          command: /home/circleci/.local/share/pnpm/pnpm run semantic-release || true
