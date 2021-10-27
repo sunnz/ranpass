@@ -7,13 +7,13 @@ jobs:
       - checkout
       - run:
           name: pnpm
-          command: curl -fsSL https://get.pnpm.io/install.sh | bash -
+          command: curl -f https://get.pnpm.io/v6.16.js | sudo node - add --global pnpm
       - run:
           name: install
-          command: /home/circleci/.local/share/pnpm/pnpm install -D
+          command: pnpm install -D
       - run:
           name: build
-          command: /home/circleci/.local/share/pnpm/pnpm build
+          command: pnpm build
       - run:
           name: release
-          command: /home/circleci/.local/share/pnpm/pnpm run semantic-release || true
+          command: pnpm semantic-release || true
