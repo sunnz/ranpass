@@ -10,7 +10,7 @@ jobs:
           command: curl -f https://get.pnpm.io/v6.16.js | sudo node - add --global pnpm
       - run:
           name: install
-          command: pnpm install -D
+          command: pnpm install -D --frozen-lockfile
       - run:
           name: build
           command: pnpm build
