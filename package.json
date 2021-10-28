@@ -10,8 +10,8 @@
     "preinstall": "npx only-allow pnpm",
     "prestart": "npx only-allow pnpm",
     "start": "nodemon src/index.ts",
-    "clean": "rm -rf ./dist",
-    "build": "pnpm clean && tsc",
+    "clean": "rm -rf dist pkg",
+    "build": "pnpm clean && tsc && pkg .",
     "semantic-release": "semantic-release"
   },
   "keywords": [],
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/node": "^16.7.6",
     "nodemon": "^2.0.14",
+    "pkg": "^5.4.0",
     "prettier": "2.3.2",
     "semantic-release": "^18.0.0",
     "ts-node": "^10.3.0",
@@ -31,5 +32,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/sunnz/ranpass.git"
+  },
+  "pkg": {
+    "targets": [ "macos-arm64", "macos-x64", "linux-x64", "linux-arm64" ],
+    "outputPath": "pkg",
+    "compress": "GZip"
   }
 }
