@@ -10,7 +10,8 @@
     "prestart": "npx only-allow pnpm",
     "start": "nodemon src/index.ts",
     "clean": "rm -rf dist pkg",
-    "build": "pnpm clean && tsc && pkg .",
+    "build": "pnpm clean && tsc",
+    "pkg": "pkg .",
     "semantic-release": "semantic-release"
   },
   "keywords": [],
