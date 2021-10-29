@@ -16,4 +16,4 @@ jobs:
           command: pnpm build
       - run:
           name: release
-          command: pnpm semantic-release || true
+          command: pnpm semantic-release
