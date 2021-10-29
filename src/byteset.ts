@@ -1,5 +1,5 @@
 /**
- * @author sunnz <https://github.com/sunnz>
+ * @author sunnz (https://github.com/sunnz)
  * @license ISC
  * @copyright 2021
  */
