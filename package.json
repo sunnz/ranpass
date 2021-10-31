@@ -34,7 +34,11 @@
     "url": "https://github.com/sunnz/ranpass.git"
   },
   "pkg": {
-    "targets": [ "macos-arm64", "macos-x64", "linux-x64", "linux-arm64" ],
+    "targets": [
+      "macos-x64",
+      "linux-x64",
+      "linux-arm64"
+    ],
     "outputPath": "pkg",
     "compress": "GZip"
   }
