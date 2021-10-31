@@ -10,7 +10,7 @@ jobs:
           command: |
             sudo npm install -g pnpm
             sudo apt update -y
-            sudo apt install libplist-dev libssl-dev openssl qemu-user-binfmt
+            sudo apt install libplist-dev libssl-dev openssl qemu-user-static qemu binfmt-support
             sudo mv .circleci/ldid /usr/local/bin
             sudo chmod 555 /usr/local/bin/ldid
       - run:
@@ -21,7 +21,9 @@ jobs:
           command: pnpm build
       - run:
           name: package
-          command: pnpm pkg
+          command: |
+            pnpm pkg
+            ls -l pkg
       - run:
           name: release
           command: pnpm semantic-release

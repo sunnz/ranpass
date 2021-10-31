@@ -35,11 +35,15 @@
   },
   "pkg": {
     "targets": [
+      "macos-arm64",
       "macos-x64",
       "linux-x64",
       "linux-arm64"
     ],
     "outputPath": "pkg",
+    "noBytecode": true,
+    "publicPackages": "*",
+    "public": true,
     "compress": "GZip"
   }
 }
