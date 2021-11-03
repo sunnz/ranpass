@@ -8,6 +8,9 @@ jobs:
       - run:
           name: base
           command: |
+            nvm install --default 16
+            nvm use 16
+            nvm uninstall 14
             npm install -g pnpm
             sudo apt update -y
             sudo apt install libplist-dev libssl-dev openssl qemu-user-binfmt qemu binfmt-support
@@ -21,9 +24,7 @@ jobs:
           command: pnpm build
       - run:
           name: package
-          command: |
-            pnpm pkg
-            ls -l pkg
+          command: pnpm pkg
       - run:
           name: release
           command: pnpm semantic-release
