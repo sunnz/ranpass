@@ -1,17 +1,17 @@
-version: 2
+version: 2.1
 jobs:
   build:
-    docker:
-      - image: "cimg/node:16.12"
+    machine:
+      image: "ubuntu-2004:202107-02"
     steps:
       - checkout
       - run:
-          name: utilities
+          name: base
           command: |
-            sudo npm install -g pnpm
+            npm install -g pnpm
             sudo apt update -y
-            sudo apt install libplist-dev libssl-dev openssl qemu-user-static qemu binfmt-support
-            sudo mv .circleci/ldid /usr/local/bin
+            sudo apt install libplist-dev libssl-dev openssl qemu-user-binfmt qemu binfmt-support
+            sudo cp .circleci/ldid /usr/local/bin/
             sudo chmod 555 /usr/local/bin/ldid
       - run:
           name: install
