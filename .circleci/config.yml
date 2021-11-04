@@ -21,10 +21,9 @@ jobs:
           command: pnpm install -D --frozen-lockfile
       - run:
           name: build
-          command: pnpm build
-      - run:
-          name: package
-          command: pnpm pkg
+          command: |
+            pnpm build
+            pnpm pkg
       - run:
           name: release
           command: pnpm semantic-release
