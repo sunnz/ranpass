@@ -11,19 +11,18 @@ jobs:
             nvm install --default 16
             nvm use 16
             nvm uninstall 14
-            npm install -g pnpm
             sudo apt update -y
             sudo apt install libplist-dev libssl-dev openssl qemu-user-binfmt qemu binfmt-support
             sudo cp .circleci/ldid /usr/local/bin/
             sudo chmod 555 /usr/local/bin/ldid
       - run:
           name: install
-          command: pnpm install -D --frozen-lockfile
+          command: npx pnpm install -D --frozen-lockfile
       - run:
           name: build
           command: |
-            pnpm build
-            pnpm pkg
+            npx pnpm build
+            npx pnpm pkg
       - run:
           name: release
-          command: pnpm semantic-release
+          command: npx pnpm semantic-release
